@@ -9,3 +9,11 @@
 
 <h3>年齢</h3>
 <%= @user.age %>
+
+<p>
+  <% if @user.avatar.attached? %>
+    <%= image_tag @user.avatar %>
+  <% end %>
+</p>
+
+<%= link_to "Edit" , edit_user_registration_path %>
