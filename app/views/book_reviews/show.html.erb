@@ -14,6 +14,12 @@
   <strong>Review:</strong>
   <%= @book_review.review %>
 </p>
-
+<h2>Review List</h2>
+<ul>
+  <% @book.book_review.each do |book_review|%>
+   <li><%= book_review.review %>
+     (<i><%= book_review.user_id %></i>)</li>
+<% end %>
+</ul>
 <%= link_to 'Edit', edit_book_review_path(@book_review) %> |
 <%= link_to 'Back', book_reviews_path %>
